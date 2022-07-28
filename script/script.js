@@ -18,6 +18,10 @@ function addCard(item) {
     deck.push(item);
 }
 
+function addDrawButton () {
+    document.getElementById("card").innerHTML += '<figcaption>Draw A Card</figcaption>'
+}
+
 function sortDeck() {
     deck = [];
     MajorArcana.forEach(addCard);
@@ -25,8 +29,17 @@ function sortDeck() {
     Pentacles.forEach(addCard);
     Swords.forEach(addCard);
     Wands.forEach(addCard);
-    document.getElementById("card").innerHTML = '<img src="img/blank.jpg " /><figcaption>Draw A Card</figcaption>'
+    document.getElementById("card").innerHTML = '<img src="img/blank.jpg " alt="Draw a Card" />'
+  
 }
+
+function changeImage(card) {
+    document.getElementById("card").src=card.file;
+    document.getElementById("card").alt=card.desc;
+    document.getElementById("meaning").innerHTML=card.meaning;
+    document.getElementById("reverse").innerHTML=card.reverse;
+}
+
 
 function drawCard() {
     if (deck.length != 0) {
@@ -34,9 +47,12 @@ function drawCard() {
         deck.splice(0, 1);
         console.log(deck.length);
         console.log(card);
-        document.getElementById("card").innerHTML = '<img src="' + card.file + ' " /><figcaption>' + card.name + '</figcaption>'
+        changeImage(card);
+       
     }
+       
 }
+
 
 function shuffleDeck() {
     sortDeck();
