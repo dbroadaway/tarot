@@ -8,8 +8,8 @@
   <meta name="keywords"
     content="tarot, cards, card generator, major arcana, minor arcana, cups, pentacles, wands, swords " />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <!--<link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />-->
   <script src="script/majorarcana.js"></script>
   <script src="script/cups.js"></script>
   <script src="script/pentacles.js"></script>
@@ -23,23 +23,22 @@
   <header>
     <h1>Tarot</h1>
   </header>
-  <nav id="mainMenu">
-    <ul>
-      <li><button onclick="sortDeck()">Sort</button></li>
-      <li><button onclick="shuffleDeck()">Shuffle</button></li>
 
-  </nav>
   <section>
     <article id="one-spread">
       <img id="card" onclick="drawCard()" src="img/blank.jpg" alt="Draw a Card"">
-        <button onclick="drawCard()">Draw</button>
       <h2>Meaning</h2>
-      <p id="meaning"></p>
+      <p id=" meaning"></p>
       <h2>Reverse</h2>
       <p id="reverse"></p>
-  </main>
-  <footer>&copy; Danielle Broadaway</footer>
-  <script src="script/script.js"></script>
+
+    </article>
+    <ul>
+      <li><button onclick="sortDeck()">Order Deck</button></li>
+      <li><button onclick="shuffleDeck()">Shuffle Deck</button></li>
+    </ul>
+    <footer>&copy; Danielle Broadaway</footer>
+    <script src="script/script.js"></script>
 </body>
 
 </html>
