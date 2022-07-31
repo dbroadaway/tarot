@@ -2,6 +2,7 @@ var deck = [];
 var newDeck = [];
 //const cardImage = new Image();
 var cardImage = document.getElementById("card");
+var cardText = document.getElementById("cardText");
 
 function randomNumber(max) {
     var number = Math.random() * 100;
@@ -32,12 +33,14 @@ function changeImage(card) {
     if (card == undefined) {
         cardImage.src = 'img/blank.jpg';
         cardImage.alt = "Draw A Card";
+        cardText.style.display = "none";
         console.log("thisthat");
     }
     else {
         cardImage.src = card.file;
         cardImage.alt = card.desc;
         console.log(card.meaning);
+        cardText.style.display = "block";
         document.getElementById("meaning").innerHTML = card.meaning;
         document.getElementById("reverse").innerHTML = card.reverse;
     }
@@ -48,7 +51,7 @@ function drawCard() {
     deck.splice(0, 1);
     console.log(deck.length);
     console.log(card);
-    changeImage(card, false);
+    changeImage(card);
 }
 
 function sortDeck() {

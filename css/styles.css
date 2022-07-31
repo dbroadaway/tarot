@@ -1,11 +1,13 @@
-
 body {
   background-color: navy;
 }
+
 nav {
-  width:80%;
-  margin:auto;
+  width: 80%;
+  margin: auto;
 }
+
+/*
 button {
   border-left:20px rgba(255,255,255,.25) solid;
   background-color: rgba(255,255,255,.2);
@@ -34,6 +36,7 @@ button:focus {
   color:#6cafd9;
 
 }
+
 ul {
   padding:none;
   margin:none;
@@ -54,17 +57,19 @@ h1 {
   padding: 0.5rem;
 }
 
+*/
 
+#cardText {
+  display: none;
+}
+.card-place section {
+  width: 50%;
+  margin: auto;
+}
 
 #card {
   margin: auto;
   width: 350px;
-  height:550px;
+  height: 550px;
   text-align: center;
 }
-
-#card img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
