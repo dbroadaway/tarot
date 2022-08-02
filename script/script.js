@@ -15,7 +15,6 @@ function randomNumber(max) {
     return number;
 }
 
-
 function addCard(item) {
     deck.push(item);
 }
@@ -29,33 +28,48 @@ function loadDeck() {
     Wands.forEach(addCard);
 }
 
-function changeImage(card) {
+function changeImage(card, reverse) {
     if (card == undefined) {
         cardImage.src = 'img/blank.jpg';
         cardImage.alt = "Draw A Card";
         cardText.style.display = "none";
-        console.log("thisthat");
     }
     else {
         cardImage.src = card.file;
         cardImage.alt = card.desc;
         console.log(card.meaning);
         cardText.style.display = "block";
+        if (reverse) {
+            cardImage.style = "transform: scaleY(-1)";
+        }
+        else {
+            cardImage.style = "transform: scaleY(1)"
+        }
         document.getElementById("meaning").innerHTML = card.meaning;
         document.getElementById("reverse").innerHTML = card.reverse;
     }
 }
 
+function reverseCard() {
+    r = randomNumber(5);
+    if (r == 4) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 function drawCard() {
+    var reverse = reverseCard();
+    console.log(reverse);
     var card = deck[0];
     deck.splice(0, 1);
-    console.log(deck.length);
-    console.log(card);
-    changeImage(card);
+    changeImage(card, reverse);
 }
 
 function sortDeck() {
-    loadDeck();
+    loadDeck()
     changeImage();
 }
 
