@@ -1,11 +1,11 @@
-var deck = [];
-var newDeck = [];
+let deck = [];
+let newDeck = [];
 //const cardImage = new Image();
-var cardImage = document.getElementById("card");
-var cardText = document.getElementById("cardText");
+let cardImage = document.getElementById("card");
+let cardText = document.getElementById("cardText");
 
 function randomNumber(max) {
-    var number = Math.random() * 100;
+    let number = Math.random() * 100;
 
     while (number > max) {
         number = Math.random() * 100;
@@ -51,7 +51,7 @@ function changeImage(card, reverse) {
 }
 
 function reverseCard() {
-    r = randomNumber(5);
+    let r = randomNumber(5);
     if (r == 4) {
         return true;
     }
@@ -61,9 +61,9 @@ function reverseCard() {
 }
 
 function drawCard() {
-    var reverse = reverseCard();
+    let reverse = reverseCard();
     console.log(reverse);
-    var card = deck[0];
+    let card = deck[0];
     deck.splice(0, 1);
     changeImage(card, reverse);
 }
@@ -75,9 +75,9 @@ function sortDeck() {
 
 function shuffleDeck() {
     loadDeck();
-    var i;
-    var r;
-    var newDeck = [];
+    let i;
+    let r;
+    let newDeck = [];
     for (i = 0; i < 78; i++) {
         r = randomNumber(deck.length);
         newDeck.push(deck[r]);
